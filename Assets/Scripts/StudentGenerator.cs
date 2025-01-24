@@ -9,11 +9,12 @@ public class StudentGenerator : MonoBehaviour
     [Range(0, 16)]
     public int NombreEtudiant;
 
-
+    public MancheObject mancheObject;
     public GameObject studentPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        NombreEtudiant = mancheObject.NumberSudents;
         GenerateStudent(NombreEtudiant, studentPrefab);
     }
 
