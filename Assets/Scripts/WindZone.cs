@@ -5,6 +5,7 @@ public class WindZone : MonoBehaviour
     [Header("Wind Settings")]
     public Vector3 windDirection = new Vector3(1f, 0f, 0f); // Direction du vent
     public float windStrength = 5f; // Force du vent
+    public float massImpactMultiplier = 2f; // Plus la valeur est grande, plus la masse influence
 
     private void OnTriggerStay(Collider other)
     {
@@ -12,8 +13,11 @@ public class WindZone : MonoBehaviour
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            // Applique une force constante dans la direction du vent
-            rb.AddForce(windDirection.normalized * windStrength, ForceMode.Force);
+            // Calcul du facteur basé sur la masse
+            float massFactor = 1f / (rb.mass * massImpactMultiplier);
+
+            // Applique la force du vent pondérée par le facteur de masse
+            rb.AddForce(windDirection.normalized * windStrength * massFactor, ForceMode.Force);
         }
     }
 
@@ -33,3 +37,5 @@ public class WindZone : MonoBehaviour
         Gizmos.DrawSphere(end, 0.1f); // Pointe de la flèche
     }
 }
+
+
