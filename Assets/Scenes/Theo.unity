@@ -853,6 +853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windDirection: {x: 1, y: 0, z: 0}
   windStrength: 5
+  massImpactMultiplier: 2
 --- !u!65 &147516613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1919,7 +1920,7 @@ GameObject:
   - component: {fileID: 592606059}
   m_Layer: 0
   m_Name: prototype_512x512_yellow
-  m_TagString: Untagged
+  m_TagString: Sol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2013,8 +2014,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.1200004, y: 5.1199994, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.1200004, y: 5.1199994, z: 0.09222468}
+  m_Center: {x: 0, y: 4.7098166e-16, z: 0.05388767}
 --- !u!1 &610225858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,6 +2496,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &803971157
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3225922671137422603, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_Name
+      value: Eleve_1 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.509
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198803367458359074, guid: 9284949978939f648be057650f1f60ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9284949978939f648be057650f1f60ce, type: 3}
 --- !u!1 &814613272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,7 +2758,7 @@ Transform:
   m_GameObject: {fileID: 863758836}
   serializedVersion: 2
   m_LocalRotation: {x: 0.054312557, y: -0, z: -0, w: 0.998524}
-  m_LocalPosition: {x: 0, y: -0.13, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3198,6 +3256,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1186797226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1186797228}
+  - component: {fileID: 1186797227}
+  m_Layer: 0
+  m_Name: Eleve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1186797227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186797226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f84ac99fab986439b1c0f47e370fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BodyPrefab:
+  - {fileID: 1163835972327219732, guid: 3ab6483c8c9f15047adce62e14164295, type: 3}
+  - {fileID: 1163835972327219732, guid: da26ab856b31ddf45b1674c11351a7bb, type: 3}
+  - {fileID: 1163835972327219732, guid: 51a2921399409074ca4dd722bfd33826, type: 3}
+  HeadShapePrefab:
+  - {fileID: 3933917658437223583, guid: ae59a389b5dfd7c41baa10ad1d777532, type: 3}
+  HairPrefab:
+  - {fileID: 8551854255116291678, guid: 7f8e873b31b75104faeee6fa4f0cbc77, type: 3}
+  MouthAndNosePrefab:
+  - {fileID: 5246986308200184071, guid: f2a5464236b97754abb552ae9c1afe25, type: 3}
+  EyesPrefab:
+  - {fileID: 1729727898559179127, guid: 69e91f3ee4e7adc479afd91b35f75f84, type: 3}
+  GlassesPrefab:
+  - {fileID: 9049057841971315930, guid: 5818dd63afddee941baec16fa57c446e, type: 3}
+--- !u!4 &1186797228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186797226}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.172, y: 0.353, z: -6.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1190396975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,6 +3483,7 @@ MonoBehaviour:
   - {fileID: 715870292}
   - {fileID: 426332922}
   NombreEtudiant: 10
+  mancheObject: {fileID: 11400000, guid: a024c81734a4fc749bd6bd3d00828171, type: 2}
   studentPrefab: {fileID: 3225922671137422603, guid: 9284949978939f648be057650f1f60ce, type: 3}
 --- !u!4 &1214339133
 Transform:
@@ -5505,3 +5622,5 @@ SceneRoots:
   - {fileID: 5203497205446908473}
   - {fileID: 1725060102}
   - {fileID: 147516616}
+  - {fileID: 803971157}
+  - {fileID: 1186797228}
