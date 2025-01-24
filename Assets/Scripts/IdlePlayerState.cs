@@ -38,7 +38,7 @@ public class IdlePlayerState : AimAndLaunch.IPlayerState
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
         RaycastHit hitInfo; 
         if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity)){
-            if(Input.GetMouseButtonUp(0)){
+            if(Input.GetMouseButton(0)){
                 controller.AimPoint = hitInfo.point;
                 controller.Direction = hitInfo.point-controller.transform.position;
                 OnAimed(controller);
