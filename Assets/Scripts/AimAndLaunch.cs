@@ -9,6 +9,7 @@ public class AimAndLaunch : MonoBehaviour
         Idle, SelectingPower, Launching
     }
 
+
     [HideInInspector] public Vector3 Direction;
     [HideInInspector] public Vector3 AimPoint;
     [HideInInspector] public float ActualPower;
@@ -16,13 +17,16 @@ public class AimAndLaunch : MonoBehaviour
     [HideInInspector] public GameObject ProjectileSelected;
     [HideInInspector] public Dictionary<PlayerState,IPlayerState> PlayerStateDic = new();
 
+
     public List<GameObject> ProjectilesPrefab = new List<GameObject>();
     public GameObject JaugePower;
     public Image JaugeVariablePower;
     public float SpeedIncrease;
     public Vector2 LaunchPowerLimits;
 
+
     private IPlayerState _currentState;
+
 
     void Start()
     {
@@ -38,27 +42,12 @@ public class AimAndLaunch : MonoBehaviour
             _currentState.UpdateState(this);
     }
 
+
+    
+
     private void _init(){
         ProjectileSelected = ProjectilesPrefab[0];
     }
-
-    public void Launch(){
-        GameObject projectile = Instantiate(ProjectileSelected, transform.position, Quaternion.identity);
-        float launchPower = LaunchPowerLimits.x+((LaunchPowerLimits.y-LaunchPowerLimits.x)*CoefPower);
-        projectile.GetComponent<Rigidbody>().AddForce(Direction.normalized*launchPower, ForceMode.Impulse);
-        ChangeState(PlayerState.Idle);
-    }
-
-    /*void OnDrawGizmos(){
-        if(_aimPoint != null){
-            Gizmos.DrawLine(transform.position, _aimPoint);
-            Gizmos.DrawSphere(transform.position+_direction,1f);
-        }
-    }*/
-
-
-
-
 
     private void _initStates(){
         PlayerStateDic.Add(PlayerState.Idle, new IdlePlayerState());
@@ -71,6 +60,13 @@ public class AimAndLaunch : MonoBehaviour
             _currentState.OnExit(this);
         _currentState = PlayerStateDic[newState];
         _currentState.OnEnter(this);
+    }
+
+    public void Launch(){
+        GameObject projectile = Instantiate(ProjectileSelected, transform.position, Quaternion.identity);
+        float launchPower = LaunchPowerLimits.x+((LaunchPowerLimits.y-LaunchPowerLimits.x)*CoefPower);
+        projectile.GetComponent<Rigidbody>().AddForce(Direction.normalized*launchPower, ForceMode.Impulse);
+        ChangeState(PlayerState.Idle);
     }
 
     public interface IPlayerState{
