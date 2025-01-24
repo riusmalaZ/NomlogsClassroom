@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6198803367458359074}
   - component: {fileID: 7434173414770780830}
+  - component: {fileID: 3550456028996289002}
   m_Layer: 0
-  m_Name: Eleve_1 1
+  m_Name: Student
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,6 +90,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3550456028996289002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3225922671137422603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77a34a68a9ac674e990a9dec86eb7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8973342789572317003
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +223,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8856195931819485379, guid: 1340ed196edb0ce4f8035c6dbb5a62cb, type: 3}
       propertyPath: m_Name
+      value: Gum
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856195931819485379, guid: 1340ed196edb0ce4f8035c6dbb5a62cb, type: 3}
+      propertyPath: m_TagString
       value: Gum
       objectReference: {fileID: 0}
     m_RemovedComponents: []
