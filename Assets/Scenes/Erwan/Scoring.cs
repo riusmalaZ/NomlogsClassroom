@@ -5,7 +5,7 @@ public class Scoring : MonoBehaviour
 {
     [Header("Score Settings")]
     [SerializeField] private TextMeshProUGUI scoreText; // Texte principal pour le score en jeu
-    private float score = 1.0f;
+    public float score = 1.0f;
     private const float maxScore = 20.0f;
     private const float minScore = 0.0f;
 

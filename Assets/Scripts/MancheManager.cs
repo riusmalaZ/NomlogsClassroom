@@ -13,9 +13,25 @@ public class MancheManager : MonoBehaviour
 
     public int MancheWindow = 0; // Numéro de la manche où la fenêtre s'ouvre
 
-    public bool mancheWin = false; // Définit si la manche est gagnée ou perdue (à modifier dans le script qui gère la défaite et victoire)
+    public bool mancheWin = true; // Définit si la manche est gagnée ou perdue (à modifier dans le script qui gère la défaite et victoire)
+
+    public bool mancheFinish = false; // Définit si la manche est terminée
+
+    [Range(0, 16)]
+    public int NumberSudentsFirstManche = 0; // Nombre d'étudiants à gérer
 
     public Fade fade;  // Script pour gérer le fondu
+
+    public TimerManche timerManche; // Script pour gérer le minuteur
+
+    public float durationInMinutes = 2f; // Durée du minuteur en minutes
+
+    public GameObject EcranVictoire; // Ecran de victoire
+
+    public GameObject EcranDefaite; // Ecran de défaite
+
+    public Scoring scoring; // Script pour gérer le score
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -26,8 +42,59 @@ public class MancheManager : MonoBehaviour
                 FirstManche(); // Initialise la première manche
             }
         }
-        
     }
+
+    void Start()
+    {
+        timerManche.StartTimer(durationInMinutes); // Démarre le minuteur
+    }
+
+    void Update()
+    {
+        //Si le score est à 0 alors 
+        if(scoring.score == 0)
+        {
+            mancheFinish = true;
+            ResetMancheObjet();
+            EcranDefaite.SetActive(true);
+        }
+
+        //Si le minuteur est fini alors
+        if(timerManche.isCompleted)
+        {
+            mancheFinish = true;
+
+            //Si le score est au dessus de 10  
+            if(scoring.score >= 10)
+            {
+                NextManche();
+                EcranVictoire.SetActive(true);
+            }
+            else
+            {
+                ResetMancheObjet();
+                EcranDefaite.SetActive(true);
+            }   
+        }
+
+        //Si élèves tué 
+            // ResetManche
+            // Ecran de défaite
+
+
+        //Si le score en dessous de 10
+        if(scoring.score < 10)
+        {
+            mancheWin = false;
+        }
+            
+        //Si mancheWin == false && mancheWin >= 10
+        if(mancheWin == false && scoring.score >= 10)
+        {
+            mancheWin = true;
+        }
+    }   
+
 
     /// <summary>
     /// Initialise la première manche
@@ -36,7 +103,7 @@ public class MancheManager : MonoBehaviour
     {
         // Initialisation de la première manche
         mancheObject.MancheNumber = 1;
-        mancheObject.NumberSudents = 5;
+        mancheObject.NumberSudents = NumberSudentsFirstManche;
         mancheObject.CanWindowOpen = false;
     }
 
@@ -57,7 +124,7 @@ public class MancheManager : MonoBehaviour
             mancheObject.CanWindowOpen = false;
         }
 
-        ReloadCurrentScene(); // Recharge la scène actuelle pour passer à la manche suivante
+        
     }
 
     /// <summary>
@@ -68,7 +135,7 @@ public class MancheManager : MonoBehaviour
         mancheObject.MancheNumber = 0;
         mancheObject.NumberSudents = 0;
         mancheObject.CanWindowOpen = false;
-        ReloadCurrentScene();
+        
     }
 
 
@@ -109,7 +176,10 @@ public class MancheManager : MonoBehaviour
         // Obtenir le nom ou l'index de la scène actuelle
         string currentSceneName = SceneManager.GetActiveScene().name;
 
+        // mancheFinish = false; // Réinitialise l'état de la manche
         // Recharger la scène
         SceneManager.LoadScene(currentSceneName);
+
+        
     }
 }

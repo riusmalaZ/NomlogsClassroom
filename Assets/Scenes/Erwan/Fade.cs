@@ -36,20 +36,20 @@ public class Fade : MonoBehaviour
         if ((FadeOut && transparence >= 1))
         {
 
-            if(mancheManager.mancheWin == true) // Vérifie si la manche est gagnée
+            
+            // enabled = false; // Désactive le script pour éviter d'appeler Update en boucle
+
+            if(mancheManager.mancheFinish)
             {
-                mancheManager.NextManche(); // Passe à la manche suivante
+                Debug.Log("azujkndaeiojgauignazgiu");
+                mancheManager.ReloadCurrentScene(); // Recharge la scène actuelle pour passer à la manche suivante
             }
-            else // Si la manche est perdue
-            {
-                mancheManager.ResetMancheObjet(); // Réinitialise la manche
-            }
-            enabled = false; // Désactive le script pour éviter d'appeler Update en boucle
+            
         }
     }
 
     // Méthode pour réinitialiser et relancer le fondu
-    public void StartFade(bool fadeOut, Action callback = null)
+    public void StartFade(bool fadeOut)
     {
         FadeOut = fadeOut; // Définit la direction du fondu
         transparence = fadeOut ? 0 : 1; // Réinitialise la transparence
