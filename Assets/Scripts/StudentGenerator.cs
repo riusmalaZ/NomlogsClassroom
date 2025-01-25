@@ -16,7 +16,6 @@ public class StudentGenerator : MonoBehaviour
     {
         NombreEtudiant = mancheObject.NumberSudents;
         Debug.Log(NombreEtudiant+" & "+studentPrefab.name);
-        GameEvents.Students = new ();
         GenerateStudent(NombreEtudiant, studentPrefab);
     }
 
