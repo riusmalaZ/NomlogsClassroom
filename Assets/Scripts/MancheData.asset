@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MancheData
   m_EditorClassIdentifier: 
   MancheNumber: 0
-  NumberSudents: 0
+  NumberSudents: 10
   CanWindowOpen: 0

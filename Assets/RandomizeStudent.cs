@@ -18,9 +18,7 @@ public class RandomizeStudent : MonoBehaviour
 
     private void _randomizeAppearance(){
         GameObject body = Instantiate(BodyPrefab[Random.Range(0, BodyPrefab.Count)],transform);
-        GameObject headShape = Instantiate(HeadShapePrefab[Random.Range(0, HeadShapePrefab.Count)]);
-        headShape.transform.position = body.transform.GetChild(0).position;
-        headShape.transform.SetParent(body.transform.GetChild(0),true);
+        GameObject headShape = Instantiate(HeadShapePrefab[Random.Range(0, HeadShapePrefab.Count)],body.transform.GetChild(0));
         int indexHairPos = 0, indexMouthPos = 0, indexGlassesPos = 0, indexEyesPos = 0;
         for(int i = 0; i < headShape.transform.childCount; i++){
             switch(headShape.transform.GetChild(i).name){
@@ -38,17 +36,11 @@ public class RandomizeStudent : MonoBehaviour
                     break;
             }
         }
-        GameObject hair = Instantiate(HairPrefab[Random.Range(0, HairPrefab.Count)]);
-        hair.transform.position = headShape.transform.GetChild(indexHairPos).position;
-        hair.transform.SetParent(headShape.transform.GetChild(indexHairPos),true);
-        GameObject glasses = Instantiate(GlassesPrefab[Random.Range(0, GlassesPrefab.Count)]);
-        glasses.transform.position = headShape.transform.GetChild(indexGlassesPos).position;
-        glasses.transform.SetParent(headShape.transform.GetChild(indexGlassesPos),true);
-        GameObject eyes = Instantiate(EyesPrefab[Random.Range(0, EyesPrefab.Count)]);
-        eyes.transform.position = headShape.transform.GetChild(indexEyesPos).position;
-        eyes.transform.SetParent(headShape.transform.GetChild(indexEyesPos),true);
-        GameObject mouthAndNose = Instantiate(MouthAndNosePrefab[Random.Range(0, MouthAndNosePrefab.Count)]);
-        mouthAndNose.transform.position = headShape.transform.GetChild(indexMouthPos).position;
-        mouthAndNose.transform.SetParent(headShape.transform.GetChild(indexMouthPos),true);
+        Instantiate(HairPrefab[Random.Range(0, HairPrefab.Count)],headShape.transform.GetChild(indexHairPos));
+        int j = Random.Range(-2, GlassesPrefab.Count);
+        if(j >= 0)
+            Instantiate(GlassesPrefab[j],headShape.transform.GetChild(indexGlassesPos));
+        Instantiate(EyesPrefab[Random.Range(0, EyesPrefab.Count)],headShape.transform.GetChild(indexEyesPos));
+        Instantiate(MouthAndNosePrefab[Random.Range(0, MouthAndNosePrefab.Count)],headShape.transform.GetChild(indexMouthPos));
     }
 }

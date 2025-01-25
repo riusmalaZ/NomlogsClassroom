@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3750526640149336557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2911661570240556999}
+  - component: {fileID: 5828792077324961419}
+  - component: {fileID: -8620636885707756309}
+  m_Layer: 0
+  m_Name: Eleve
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2911661570240556999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3750526640149336557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.165, y: 0.709, z: -7.001}
+  m_LocalScale: {x: 0.03621808, y: 0.03621808, z: 0.03621808}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5828792077324961419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3750526640149336557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f84ac99fab986439b1c0f47e370fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BodyPrefab:
+  - {fileID: 7525415862351565955, guid: ba1c312dc128f844cb87aa039e1163fd, type: 3}
+  HeadShapePrefab:
+  - {fileID: 6322063124416619039, guid: 4b47cdc828f058049a7897ca991e34d3, type: 3}
+  - {fileID: 7920756576955564658, guid: 36685e75d14654b438dcd3a36e547a40, type: 3}
+  - {fileID: 789147008153108057, guid: 718eb1a78e85e704d9cb8c06b633721d, type: 3}
+  - {fileID: 483659464777262405, guid: 3a59b857ecb00054c8d9284d53abe1e1, type: 3}
+  - {fileID: 2156379104641827386, guid: f26bf9b7450c0db41a2f74c9a611157f, type: 3}
+  - {fileID: 4543804451865437138, guid: 1094231069f579d49b656e5e93df67be, type: 3}
+  - {fileID: 7470717908550738719, guid: 851b45d77b063dd43aa342c834eb09bb, type: 3}
+  HairPrefab:
+  - {fileID: 5661288902940257747, guid: be23c71602d32134aa0a310c6f59254c, type: 3}
+  - {fileID: 2686111299984529200, guid: 33aee22bc2549a4499a41aebf9e75f6d, type: 3}
+  - {fileID: 1933077959497305159, guid: 2337a81dc9b787447ab524f6271b4121, type: 3}
+  - {fileID: 4582994883748483031, guid: 5564241d992d9d3499db28a3d9f947bd, type: 3}
+  - {fileID: 7471750701039784211, guid: 888e46db1093d0243b46a8326e85d104, type: 3}
+  - {fileID: 7426854129735129859, guid: 3e71c939a87738847b2242e61f50fb10, type: 3}
+  - {fileID: 1511497752572314234, guid: 763133c5cc520b749bf8fa76fb1a09b0, type: 3}
+  MouthAndNosePrefab:
+  - {fileID: 6137952083818157508, guid: 6359a0ed31d7c9047b22380f72fce278, type: 3}
+  - {fileID: 179121579755235385, guid: 8d70fdfcd46531647af86e8402b5c3d9, type: 3}
+  - {fileID: 6604874028627439504, guid: 4147eb744423b1447947d927de084e46, type: 3}
+  - {fileID: 1614435720856243463, guid: 888f2d491b57c014b9ea09ec4d84fadd, type: 3}
+  - {fileID: 3655512235064970617, guid: 86e2cb53f2a6448428e5c3732bfc1e28, type: 3}
+  - {fileID: 7593376184088400512, guid: 4e883471ad8cea34b96b0d85858e38ce, type: 3}
+  - {fileID: 6726324047401240393, guid: 211ffc83d8c6a1f488ff0e23dc79fc68, type: 3}
+  EyesPrefab:
+  - {fileID: 2416672669759237826, guid: 4bae41d946cca8d49a42915e3b30e1df, type: 3}
+  - {fileID: 4409559408690314152, guid: f8cc57c2e2cff2b4da4c98feb572d8b2, type: 3}
+  - {fileID: 1658400054649844916, guid: ac07a249b92add74385dc99a3f961283, type: 3}
+  - {fileID: 8946332943543211448, guid: ce83e2bf265c2ca4a8f10c61c87c6af0, type: 3}
+  - {fileID: 4162454081590621241, guid: c851cb2b1569b5c46b8d9f13b603a6a9, type: 3}
+  - {fileID: 6207633149575151639, guid: 6eeb164d463d855438e98300b60901b2, type: 3}
+  - {fileID: 2205142800903806121, guid: 508a1e85a33ca64488b696e41a1a3622, type: 3}
+  GlassesPrefab:
+  - {fileID: 6699751055973722706, guid: c065267d5d8eefd4d9f00465a7c6c494, type: 3}
+  - {fileID: 4350014991162982658, guid: 3210a7e6b08c1a44f9e91f215bd1b83a, type: 3}
+--- !u!114 &-8620636885707756309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3750526640149336557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77a34a68a9ac674e990a9dec86eb7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBubbling: 0
