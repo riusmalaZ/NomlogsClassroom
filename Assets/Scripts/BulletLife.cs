@@ -39,7 +39,6 @@ public class BulletLife : MonoBehaviour
 
         if (collision.gameObject.tag == "Gum")
         {
-            print("ça tire");
             collision.gameObject.GetComponentInParent<Student>().Pop(IsLethal);
             Destroy(gameObject);
         }
