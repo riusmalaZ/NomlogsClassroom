@@ -11,7 +11,7 @@ public class MancheManager : MonoBehaviour
 
     public MancheObject mancheObject; // ScriptableObject pour stocker les informations de la manche
 
-    public int MancheWindow = 0; // Numéro de la manche où la fenêtre s'ouvre
+    public int MancheWindow = 5; // Numéro de la manche où la fenêtre s'ouvre
 
     public bool mancheWin = true; // Définit si la manche est gagnée ou perdue (à modifier dans le script qui gère la défaite et victoire)
 
@@ -32,6 +32,11 @@ public class MancheManager : MonoBehaviour
 
     public Scoring scoring; // Script pour gérer le score
 
+    public bool isReloading = false;
+
+    private bool actionEffectuee = false; // Permet de s'assurer que l'action est exécutée une seule fois
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -51,21 +56,23 @@ public class MancheManager : MonoBehaviour
 
     void Update()
     {
-        //Si le score est à 0 alors 
-        if(scoring.score == 0)
+        // Si le score est à 0 alors 
+        if (scoring.score == 0 && !actionEffectuee)
         {
+            actionEffectuee = true; // Marque l'action comme effectuée
             mancheFinish = true;
             ResetMancheObjet();
             EcranDefaite.SetActive(true);
         }
 
-        //Si le minuteur est fini alors
-        if(timerManche.isCompleted)
+        // Si le minuteur est fini alors
+        if (timerManche.isCompleted && !actionEffectuee)
         {
+            actionEffectuee = true; // Marque l'action comme effectuée
             mancheFinish = true;
 
-            //Si le score est au dessus de 10  
-            if(scoring.score >= 10)
+            // Si le score est au-dessus de 10  
+            if (scoring.score >= 10)
             {
                 NextManche();
                 EcranVictoire.SetActive(true);
@@ -74,7 +81,7 @@ public class MancheManager : MonoBehaviour
             {
                 ResetMancheObjet();
                 EcranDefaite.SetActive(true);
-            }   
+            }
         }
 
         //Si élèves tué 
@@ -173,6 +180,9 @@ public class MancheManager : MonoBehaviour
     /// </summary>
     public void ReloadCurrentScene()
     {
+
+        if (isReloading) return; // Évite plusieurs appels
+        isReloading = true;
         // Obtenir le nom ou l'index de la scène actuelle
         string currentSceneName = SceneManager.GetActiveScene().name;
 
