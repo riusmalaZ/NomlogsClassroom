@@ -42,7 +42,7 @@ public class Scoring : MonoBehaviour
     }
 
     // Met à jour les textes des panels de récapitulatif
-    private void UpdateRecapPanels()
+    public void UpdateRecapPanels()
     {
         if (victoireScoreText != null)
         {

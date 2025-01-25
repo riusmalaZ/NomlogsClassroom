@@ -1,7 +1,9 @@
+using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 /// <summary>
 /// Gestionnaire des manches du jeux
@@ -36,10 +38,19 @@ public class MancheManager : MonoBehaviour
 
     private bool actionEffectuee = false; // Permet de s'assurer que l'action est exécutée une seule fois
 
+    public TextMeshProUGUI MancheNumberTextWin; // Texte pour afficher
+
+    public TextMeshProUGUI MancheNumberTextLose; // Texte pour afficher
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+
+        MancheNumberTextLose.text = "Manche " + mancheObject.MancheNumber.ToString() + " perdue";
+
+        MancheNumberTextWin.text = "Manche " + mancheObject.MancheNumber.ToString() + " réussie";
+        
         if(mancheObject != null) // Vérifie si le ScriptableObject est assigné
         {
             if(mancheObject.MancheNumber == 0) // Vérifie si c'est la première manche
@@ -63,6 +74,7 @@ public class MancheManager : MonoBehaviour
             mancheFinish = true;
             ResetMancheObjet();
             EcranDefaite.SetActive(true);
+            scoring.UpdateRecapPanels();
         }
 
         // Si le minuteur est fini alors
@@ -76,11 +88,13 @@ public class MancheManager : MonoBehaviour
             {
                 NextManche();
                 EcranVictoire.SetActive(true);
+                scoring.UpdateRecapPanels();
             }
             else
             {
                 ResetMancheObjet();
                 EcranDefaite.SetActive(true);
+                scoring.UpdateRecapPanels();
             }
         }
 
@@ -112,6 +126,10 @@ public class MancheManager : MonoBehaviour
         mancheObject.MancheNumber = 1;
         mancheObject.NumberSudents = NumberSudentsFirstManche;
         mancheObject.CanWindowOpen = false;
+
+        MancheNumberTextLose.text = "Manche " + mancheObject.MancheNumber.ToString() + " perdue";
+
+        MancheNumberTextWin.text = "Manche " + mancheObject.MancheNumber.ToString() + " réussie";
     }
 
     /// <summary>
