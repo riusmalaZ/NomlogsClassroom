@@ -5,11 +5,16 @@ public class GameEvents : MonoBehaviour
 {
     public static List<Student> Students = new ();
     float chrono;
+    Scoring scoring;
     public float Tick;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        scoring = GetComponent<Scoring>();
+        foreach (Student student in Students)
+        {
+            student.scoring = scoring;
+        }
     }
 
     // Update is called once per frame

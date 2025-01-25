@@ -7,6 +7,7 @@ public class Student : MonoBehaviour
     Animator animator;
     public int Row ;
     float chrono;
+    public Scoring scoring;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,6 +25,7 @@ public class Student : MonoBehaviour
             chrono += Time.deltaTime;
             if (chrono > 6) 
             {
+                scoring.ChangeScore(-1);
                 isBubbling = false;
             }
         }
@@ -42,7 +44,12 @@ public class Student : MonoBehaviour
         isBubbling = false;
         if (isLethal)
         {
-            return;
+            scoring.ChangeScore(-5);
+        }
+        else
+        {
+            if (chrono < 4.5f ) scoring.ChangeScore(0.5f);
+            else scoring.ChangeScore(1);
         }
 
     }

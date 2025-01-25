@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class Scoring : MonoBehaviour
 {
     [Header("Score Settings")]
     [SerializeField] private TextMeshProUGUI scoreText; // Texte principal pour le score en jeu
@@ -21,42 +21,9 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Méthodes pour gérer les modifications du score
-    public void BulleEclatee(float amount)
+    public void ChangeScore(float amount)
     {
-        amount = 0.5f;
         score += amount;
-        score = Mathf.Clamp(score, minScore, maxScore);
-        UpdateScoreUI();
-    }
-
-    public void GrosseBulleEclatee(float amount)
-    {
-        amount = 1.0f;
-        score += amount;
-        score = Mathf.Clamp(score, minScore, maxScore);
-        UpdateScoreUI();
-    }
-
-    public void BulleRatee(float amount)
-    {
-        amount = 1.0f;
-        score -= amount;
-        score = Mathf.Clamp(score, minScore, maxScore);
-        UpdateScoreUI();
-    }
-
-    public void TirInnocent(float amount)
-    {
-        amount = 2.0f;
-        score -= amount;
-        score = Mathf.Clamp(score, minScore, maxScore);
-        UpdateScoreUI();
-    }
-
-    public void TirLetal(float amount)
-    {
-        amount = 5.0f;
-        score -= amount;
         score = Mathf.Clamp(score, minScore, maxScore);
         UpdateScoreUI();
     }
@@ -66,7 +33,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = score.ToString("0.0") + "/20";
+            scoreText.text = score.ToString();
         }
         else
         {
