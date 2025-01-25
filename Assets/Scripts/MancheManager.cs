@@ -36,7 +36,7 @@ public class MancheManager : MonoBehaviour
     {
         // Initialisation de la première manche
         mancheObject.MancheNumber = 1;
-        mancheObject.NumberSudents = 2;
+        mancheObject.NumberSudents = 5;
         mancheObject.CanWindowOpen = false;
     }
 

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 public class GameEvents : MonoBehaviour
 {
     public static List<Student> Students;
-    public MancheObject mancheObject;
     float chrono;
+    public float Tick;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,23 +15,32 @@ public class GameEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(5 / 2);
-        Count2s();
+        CountTick();
     }
 
-    void Count2s()
+    void CountTick()
     {
         chrono += Time.deltaTime;
-        if (chrono >= 2)
+        if (chrono >= Tick)
         {
             ChooseStudents();
+            chrono = 0;
         }
     }
 
     void ChooseStudents()
     {
-        int nMax = mancheObject.NumberSudents / 2 + 1;
-        int n = Random.Range(0, nMax);
+        bool canBubble = false;
+        foreach (Student student in Students)
+        {
+            if (!student.isBubbling) canBubble = true;
+        }
+
+        if (!canBubble) return;
+
+        int nMax = Students.Count / 2 + 1;
+        int n = Random.Range(1, nMax);
+        print(n);
         for (int i = 0; i < n; i++)
         {
             bool newBubble = false;
@@ -39,15 +48,14 @@ public class GameEvents : MonoBehaviour
             while (!newBubble)
             {
                 trys++;
-                if (trys >= 100)
+                if (trys == 100)
                 {
-                    print("ayyyy");
                     newBubble = true;
+                    print("pb");
                 }
                 int x = Random.Range(0, Students.Count);
                 if (!Students[x].isBubbling)
                 {
-                    print(trys);
                     Students[x].Bubble();
                     newBubble = true;
                 }

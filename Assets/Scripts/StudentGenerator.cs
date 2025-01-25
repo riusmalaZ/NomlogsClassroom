@@ -46,6 +46,10 @@ public class StudentGenerator : MonoBehaviour
                 student.transform.SetParent(this.transform);
                 GameEvents.Students.Add(student.GetComponent<Student>());
                 randomList.Add(random);
+                if (random >= 0 && random < 4) student.GetComponent<Student>().Row = 1;
+                else if (random >= 4 && random < 8) student.GetComponent<Student>().Row = 2;
+                else if (random >= 8 && random < 12) student.GetComponent<Student>().Row = 3;
+                else if (random >= 12 && random < 16) student.GetComponent<Student>().Row = 4;
                 
             }
 
