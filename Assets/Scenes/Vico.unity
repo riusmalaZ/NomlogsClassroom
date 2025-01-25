@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce8a5f8fd08dac43b7a4e4028fe1380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mancheObject: {fileID: 11400000, guid: a024c81734a4fc749bd6bd3d00828171, type: 2}
+  Tick: 3
 --- !u!4 &261202818
 Transform:
   m_ObjectHideFlags: 0
@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 592606059}
   m_Layer: 0
   m_Name: prototype_512x512_yellow
-  m_TagString: Untagged
+  m_TagString: Sol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

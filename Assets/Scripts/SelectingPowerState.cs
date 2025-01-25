@@ -28,7 +28,7 @@ public class SelectingPowerState : AimAndLaunch.IPlayerState
     private void _increasePower(AimAndLaunch controller){
         if(Input.GetMouseButton(0)){
             if(controller.CoefPower < 1){
-                controller.ActualPower += controller.SpeedIncrease*Time.deltaTime*2;
+                controller.ActualPower += controller.SpeedIncrease*Time.deltaTime*3;
                 controller.CoefPower = controller.ActualPower/(controller.LaunchPowerLimits.y-controller.LaunchPowerLimits.x);
             }
             else

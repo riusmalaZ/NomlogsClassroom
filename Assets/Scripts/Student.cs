@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Student : MonoBehaviour
 {
-    public bool isBubbling;
+    public bool isBubbling = false ;
     Animator animator;
     public int Row ;
     float chrono;
@@ -22,7 +22,7 @@ public class Student : MonoBehaviour
         if (isBubbling)
         {
             chrono += Time.deltaTime;
-            if (chrono > 3) 
+            if (chrono > 6) 
             {
                 isBubbling = false;
             }
@@ -38,7 +38,7 @@ public class Student : MonoBehaviour
 
     public void Pop(bool isLethal)
     {
-        animator.SetTrigger("Pop");
+        animator.SetTrigger("PopBubble");
         isBubbling = false;
         if (isLethal)
         {

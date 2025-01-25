@@ -44,6 +44,7 @@ public class StudentGenerator : MonoBehaviour
             {
                 GameObject student = Instantiate(Prefab, Emplacement[random].transform.position, Quaternion.Euler(0, 0, 0));
                 student.transform.SetParent(this.transform);
+                print(student.GetComponent<Student>().isBubbling);
                 GameEvents.Students.Add(student.GetComponent<Student>());
                 randomList.Add(random);
                 if (random >= 0 && random < 4) student.GetComponent<Student>().Row = 1;

@@ -4,6 +4,7 @@ public class BulletLife : MonoBehaviour
 {
     public float TimeAfterFirstHitBeforeFreeze;
 
+    public bool IsLethal;
     private float _timerAfterHit;
     private bool _hasHit;
     private bool _waitToFreeze;
@@ -35,12 +36,11 @@ public class BulletLife : MonoBehaviour
         if(_waitToFreeze && collision.gameObject.CompareTag("Sol"))
             _freeze();
 
-        Debug.Log("Bullet hit gumsssss");
 
         if (collision.gameObject.tag == "Gum")
         {
-            Debug.Log("Bullet hit gum");
-            collision.gameObject.GetComponent<BubbleGumGenerator>().ResetScale();
+            print("ça tire");
+            collision.gameObject.GetComponentInParent<Student>().Pop(IsLethal);
             Destroy(gameObject);
         }
     }
