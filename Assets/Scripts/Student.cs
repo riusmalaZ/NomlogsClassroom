@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Student : MonoBehaviour
 {
     public bool isBubbling = false ;
-    Animator animator;
+    public Animator animator;
     public int Row ;
     float chrono;
     public Scoring scoring;
@@ -13,7 +13,7 @@ public class Student : MonoBehaviour
     void Start()
     {
         chrono = 0;
-        animator = GetComponentInChildren<Animator>();
+        //animator = GetComponentInChildren<Animator>();
         isBubbling = false;
     }
 
