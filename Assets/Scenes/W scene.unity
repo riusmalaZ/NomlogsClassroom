@@ -5351,6 +5351,9 @@ MonoBehaviour:
   EcranVictoire: {fileID: 5088353316188427884}
   EcranDefaite: {fileID: 261294685}
   scoring: {fileID: 1214339137}
+  isReloading: 0
+  MancheNumberTextWin: {fileID: 2367223739919737087}
+  MancheNumberTextLose: {fileID: 637736640}
 --- !u!114 &1214339136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5381,8 +5384,8 @@ MonoBehaviour:
   score: 20
   victoirePanel: {fileID: 0}
   defaitePanel: {fileID: 0}
-  victoireScoreText: {fileID: 0}
-  defaiteScoreText: {fileID: 0}
+  victoireScoreText: {fileID: 3179370593512209643}
+  defaiteScoreText: {fileID: 630016057}
 --- !u!1001 &1244248683
 PrefabInstance:
   m_ObjectHideFlags: 0
