@@ -42,7 +42,7 @@ public class StudentGenerator : MonoBehaviour
 
             if(!randomList.Contains(random))
             {
-                GameObject student = Instantiate(Prefab, Emplacement[random].transform.position, Quaternion.Euler(0, 0, 90));
+                GameObject student = Instantiate(Prefab, Emplacement[random].transform.position, Quaternion.Euler(0, 0, 0));
                 student.transform.SetParent(this.transform);
                 GameEvents.Students.Add(student.GetComponent<Student>());
                 randomList.Add(random);

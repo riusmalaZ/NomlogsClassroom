@@ -52,6 +52,7 @@ MonoBehaviour:
   - {r: 1, g: 0.36862746, b: 0.36862746, a: 1}
   - {r: 0.6901961, g: 1, b: 0.6313726, a: 1}
   - {r: 0.34509805, g: 0.34509805, b: 0.34509805, a: 1}
+  GumPrefab: {fileID: 8856195931819485379, guid: 1340ed196edb0ce4f8035c6dbb5a62cb, type: 3}
   BodyPrefab:
   - {fileID: 7525415862351565955, guid: ba1c312dc128f844cb87aa039e1163fd, type: 3}
   HeadShapePrefab:
@@ -102,3 +103,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBubbling: 0
+  Row: 0

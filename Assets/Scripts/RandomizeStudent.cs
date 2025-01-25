@@ -7,6 +7,7 @@ public class RandomizeStudent : MonoBehaviour
     public List<Color> SkinColors = new List<Color>();
     public List<Color> OutfitColors = new List<Color>();
     [Header("Prefabs")]
+    public GameObject GumPrefab;
     public List<GameObject> BodyPrefab = new List<GameObject>();
     public List<GameObject> HeadShapePrefab = new List<GameObject>();
     public List<GameObject> HairPrefab = new List<GameObject>();
@@ -22,8 +23,7 @@ public class RandomizeStudent : MonoBehaviour
 
     private void _randomizeAppearance(){
         string sortingLayerNameRow = "FirstRow";
-        int Row = 0;
-        switch(Row){
+        switch(GetComponent<Student>().Row){
             case 1:
                 sortingLayerNameRow = "FirstRow";
                 break;
@@ -74,5 +74,7 @@ public class RandomizeStudent : MonoBehaviour
         GameObject mouthAndNose = Instantiate(MouthAndNosePrefab[Random.Range(0, MouthAndNosePrefab.Count)],headShape.transform.GetChild(indexMouthPos));
         mouthAndNose.GetComponent<SpriteRenderer>().color = headShape.GetComponent<SpriteRenderer>().color;
         mouthAndNose.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        GameObject gum = Instantiate(GumPrefab,headShape.transform.GetChild(indexMouthPos));
+        gum.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
     }
 }
