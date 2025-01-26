@@ -65,6 +65,7 @@ public class AimAndLaunch : MonoBehaviour
     }
 
     public void Launch(){
+        GetComponent<AudioSource>().Play();
         GameObject projectile = Instantiate(ProjectileSelected, ObjectPosition.position, Quaternion.identity);
         projectile.GetComponent<BulletLife>().DistanceForLethal = DistanceForLethal;
         float launchPower = LaunchPowerLimits.x+((LaunchPowerLimits.y-LaunchPowerLimits.x)*CoefPower);
