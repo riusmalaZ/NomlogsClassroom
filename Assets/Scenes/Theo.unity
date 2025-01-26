@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 168621621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee90a6b5209ddf4b8f5eaa1001e8df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 90906cda5ae6abf409c686cf237fd0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0}
@@ -1246,13 +1246,14 @@ MonoBehaviour:
   CoefPower: 0
   ProjectileSelected: {fileID: 0}
   ProjectilesPrefab:
+  - {fileID: 6536651030732105075, guid: fb14a8025a76c1d46b6c2f60077e0652, type: 3}
   - {fileID: 6536651030732105075, guid: 56c22dfb8d7dac64c96c6d041eeb8110, type: 3}
   - {fileID: 6536651030732105075, guid: ba902e1513de2264fa9dd76bb466d61c, type: 3}
-  - {fileID: 6536651030732105075, guid: fb14a8025a76c1d46b6c2f60077e0652, type: 3}
   JaugePower: {fileID: 6467972719915367860}
   JaugeVariablePower: {fileID: 890161846682269994}
   SpeedIncrease: 5
   LaunchPowerLimits: {x: 5, y: 15}
+  DistanceForLethal: 1.5
   ObjectPosition: {fileID: 354472427}
 --- !u!95 &168621623
 Animator:
