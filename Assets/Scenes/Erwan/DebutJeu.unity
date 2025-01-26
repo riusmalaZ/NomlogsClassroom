@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 44150486}
   - component: {fileID: 44150485}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: EcranDebut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1647,12 +1647,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720517444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 440.387, y: 181.59737, z: -304.73422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 39.386993, y: -43.902634, z: -304.73422}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1913122401}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1722914418
 GameObject:
@@ -2263,6 +2263,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1720517446}
   - {fileID: 1234016419}
   - {fileID: 1348077225}
   - {fileID: 1237016822}
@@ -2368,4 +2369,3 @@ SceneRoots:
   - {fileID: 44150488}
   - {fileID: 1297143063}
   - {fileID: 2020678346}
-  - {fileID: 1720517446}
