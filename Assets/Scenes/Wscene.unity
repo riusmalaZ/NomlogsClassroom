@@ -910,8 +910,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 054490ff63f635b4491c3f5f2a7bdf5b, type: 3}
-  m_Resource: {fileID: 8300000, guid: 054490ff63f635b4491c3f5f2a7bdf5b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0b85768a840d2644d80a43f657d806af, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0b85768a840d2644d80a43f657d806af, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -13574,7 +13574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa0c741df9dd8634c8d84fd9ba2b0e3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a160fcbf71a46634eb8738b9c90b9111, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13790,7 +13790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ee12d2bc9f5c8554d97d5beb9dc4b275, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 712cf1bebce9cfe4ea296f7c96e287d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14140,8 +14140,8 @@ RectTransform:
   - {fileID: 2087641681613552417}
   - {fileID: 798839281}
   - {fileID: 616536674}
-  - {fileID: 2409500384610132921}
   - {fileID: 758158316}
+  - {fileID: 2409500384610132921}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -14176,7 +14176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &6467972719915367860
 GameObject:
   m_ObjectHideFlags: 0
