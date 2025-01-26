@@ -40,7 +40,8 @@ public class IdlePlayerState : AimAndLaunch.IPlayerState
         if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity)){
             if(Input.GetMouseButton(0)){
                 controller.AimPoint = hitInfo.point;
-                controller.Direction = hitInfo.point-controller.transform.position;
+                controller.Direction = hitInfo.point-controller.ObjectPosition.position;
+                Debug.Log(hitInfo.transform.name);
                 OnAimed(controller);
             }
         }

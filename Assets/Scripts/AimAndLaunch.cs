@@ -68,8 +68,7 @@ public class AimAndLaunch : MonoBehaviour
         GameObject projectile = Instantiate(ProjectileSelected, ObjectPosition.position, Quaternion.identity);
         projectile.GetComponent<BulletLife>().DistanceForLethal = DistanceForLethal;
         float launchPower = LaunchPowerLimits.x+((LaunchPowerLimits.y-LaunchPowerLimits.x)*CoefPower);
-        Vector3 direction = new Vector3(Direction.normalized.x,Direction.normalized.y,Direction.normalized.z*-1);
-        projectile.GetComponent<Rigidbody>().AddForce(direction*launchPower, ForceMode.Impulse);
+        projectile.GetComponent<Rigidbody>().AddForce(Direction.normalized*launchPower, ForceMode.Impulse);
     }
 
     public void DoneLaunching(){
