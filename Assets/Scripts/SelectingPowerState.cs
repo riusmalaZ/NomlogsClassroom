@@ -7,6 +7,7 @@ public class SelectingPowerState : AimAndLaunch.IPlayerState
         controller.JaugeVariablePower.fillAmount = 0;
         controller.CoefPower = 0;
         controller.ActualPower = 0;
+        controller.GetComponent<Animator>().SetTrigger("SelectingPower");
     }
 
     public void UpdateState(AimAndLaunch controller){

@@ -9,7 +9,7 @@ public class RandomizeStudent : MonoBehaviour
     [Header("Prefabs")]
     public GameObject GumPrefab;
     public List<GameObject> BodyPrefab = new List<GameObject>();
-    public List<GameObject> HeadShapePrefab = new List<GameObject>();
+    public List<GameObject> headColorPrefab = new List<GameObject>();
     public List<GameObject> HairPrefab = new List<GameObject>();
     public List<GameObject> MouthAndNosePrefab = new List<GameObject>();
     public List<GameObject> EyesPrefab = new List<GameObject>();
@@ -40,13 +40,12 @@ public class RandomizeStudent : MonoBehaviour
         GameObject body = Instantiate(BodyPrefab[Random.Range(0, BodyPrefab.Count)],transform);
         body.GetComponent<SpriteRenderer>().color = OutfitColors[Random.Range(0,OutfitColors.Count)];
         body.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
-        GameObject headShape = Instantiate(HeadShapePrefab[Random.Range(0, HeadShapePrefab.Count)],body.transform.GetChild(0));
-        headShape.GetComponent<SpriteRenderer>().color = SkinColors[Random.Range(0,SkinColors.Count)];
-        headShape.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
-
-        int indexHairPos = 0, indexMouthPos = 0, indexGlassesPos = 0, indexEyesPos = 0;
-        for(int i = 0; i < headShape.transform.childCount; i++){
-            switch(headShape.transform.GetChild(i).name){
+        GameObject headColor = Instantiate(headColorPrefab[Random.Range(0, headColorPrefab.Count)],body.transform.GetChild(0));
+        headColor.GetComponent<SpriteRenderer>().color = SkinColors[Random.Range(0,SkinColors.Count)];
+        headColor.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        int indexHairPos = 0, indexMouthPos = 0, indexGlassesPos = 0, indexEyesPos = 0, indexHeadShape = 0;
+        for(int i = 0; i < headColor.transform.childCount; i++){
+            switch(headColor.transform.GetChild(i).name){
                 case "HairPosition":
                     indexHairPos = i;
                     break;
@@ -59,23 +58,29 @@ public class RandomizeStudent : MonoBehaviour
                 case "GlassesPosition":
                     indexGlassesPos = i;
                     break;
+                case "HeadShape":
+                    indexHeadShape = i;
+                    break;
             }
         }
 
-        GameObject hair = Instantiate(HairPrefab[Random.Range(0, HairPrefab.Count)],headShape.transform.GetChild(indexHairPos));
+        GameObject headShape = headColor.transform.GetChild(indexHeadShape).gameObject;
+        headShape.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        GameObject hair = Instantiate(HairPrefab[Random.Range(0, HairPrefab.Count)],headColor.transform.GetChild(indexHairPos));
         hair.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
         int j = Random.Range(-2, GlassesPrefab.Count);
         if(j >= 0){
-            GameObject glasses = Instantiate(GlassesPrefab[j],headShape.transform.GetChild(indexGlassesPos));
+            GameObject glasses = Instantiate(GlassesPrefab[j],headColor.transform.GetChild(indexGlassesPos));
             glasses.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
         }
-        GameObject eyes = Instantiate(EyesPrefab[Random.Range(0, EyesPrefab.Count)],headShape.transform.GetChild(indexEyesPos));
+        GameObject eyes = Instantiate(EyesPrefab[Random.Range(0, EyesPrefab.Count)],headColor.transform.GetChild(indexEyesPos));
         eyes.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
-        GameObject mouthAndNose = Instantiate(MouthAndNosePrefab[Random.Range(0, MouthAndNosePrefab.Count)],headShape.transform.GetChild(indexMouthPos));
-        mouthAndNose.GetComponent<SpriteRenderer>().color = headShape.GetComponent<SpriteRenderer>().color;
+        GameObject mouthAndNose = Instantiate(MouthAndNosePrefab[Random.Range(0, MouthAndNosePrefab.Count)],headColor.transform.GetChild(indexMouthPos));
+        mouthAndNose.GetComponent<SpriteRenderer>().color = headColor.GetComponent<SpriteRenderer>().color;
         mouthAndNose.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
-        GameObject gum = Instantiate(GumPrefab,headShape.transform.GetChild(indexMouthPos));
+        GameObject gum = Instantiate(GumPrefab,headColor.transform.GetChild(indexMouthPos));
         GetComponent<Student>().animator = gum.GetComponent<Animator>();
         gum.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        
     }
 }

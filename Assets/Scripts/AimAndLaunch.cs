@@ -24,6 +24,7 @@ public class AimAndLaunch : MonoBehaviour
     public float SpeedIncrease;
     public Vector2 LaunchPowerLimits;
     public float DistanceForLethal;
+    public Transform ObjectPosition;
 
 
     private IPlayerState _currentState;
@@ -64,10 +65,14 @@ public class AimAndLaunch : MonoBehaviour
     }
 
     public void Launch(){
-        GameObject projectile = Instantiate(ProjectileSelected, transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(ProjectileSelected, ObjectPosition.position, Quaternion.identity);
         projectile.GetComponent<BulletLife>().DistanceForLethal = DistanceForLethal;
         float launchPower = LaunchPowerLimits.x+((LaunchPowerLimits.y-LaunchPowerLimits.x)*CoefPower);
-        projectile.GetComponent<Rigidbody>().AddForce(Direction.normalized*launchPower, ForceMode.Impulse);
+        Vector3 direction = new Vector3(Direction.normalized.x,Direction.normalized.y,Direction.normalized.z*-1);
+        projectile.GetComponent<Rigidbody>().AddForce(direction*launchPower, ForceMode.Impulse);
+    }
+
+    public void DoneLaunching(){
         ChangeState(PlayerState.Idle);
     }
 
