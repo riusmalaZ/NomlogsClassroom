@@ -53,6 +53,10 @@ public class Student : MonoBehaviour
 
     }
 
+    public void AnimationOpenWindow(){
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("OpenWindow");
+    }
+
     public void CheckIfInArea(Vector3 projPos, float distance)
     {
         if (Vector3.Distance(projPos, transform.position) < distance && isBubbling) Pop(false);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2911661570240556999}
   - component: {fileID: 5828792077324961419}
   - component: {fileID: -8620636885707756309}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eleve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,20 +42,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3750526640149336557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58f84ac99fab986439b1c0f47e370fd2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f3c972e08de55344ae5765800ff84c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SkinColors:
-  - {r: 1, g: 0.8784314, b: 0.6784314, a: 1}
+  - {r: 1, g: 0.9091223, b: 0.6999999, a: 1}
   OutfitColors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0.36862746, b: 0.36862746, a: 1}
-  - {r: 0.6901961, g: 1, b: 0.6313726, a: 1}
-  - {r: 0.34509805, g: 0.34509805, b: 0.34509805, a: 1}
   GumPrefab: {fileID: 8856195931819485379, guid: 1340ed196edb0ce4f8035c6dbb5a62cb, type: 3}
   BodyPrefab:
   - {fileID: 7525415862351565955, guid: ba1c312dc128f844cb87aa039e1163fd, type: 3}
-  headColorPrefab:
+  HeadColorPrefab:
   - {fileID: 6322063124416619039, guid: 4b47cdc828f058049a7897ca991e34d3, type: 3}
   - {fileID: 7920756576955564658, guid: 36685e75d14654b438dcd3a36e547a40, type: 3}
   - {fileID: 789147008153108057, guid: 718eb1a78e85e704d9cb8c06b633721d, type: 3}
@@ -90,6 +87,10 @@ MonoBehaviour:
   GlassesPrefab:
   - {fileID: 6699751055973722706, guid: c065267d5d8eefd4d9f00465a7c6c494, type: 3}
   - {fileID: 4350014991162982658, guid: 3210a7e6b08c1a44f9e91f215bd1b83a, type: 3}
+  LogosPrefab:
+  - {fileID: 7102549995912703377, guid: bb5b36fa2b91f974ba6fac6300f51451, type: 3}
+  - {fileID: 6417485348935685354, guid: 04edc2b761c310b42b61c0fb30109d16, type: 3}
+  - {fileID: 3460794065719528891, guid: ec22ec002c4938d4d99f3bf91fe0d96c, type: 3}
 --- !u!114 &-8620636885707756309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,5 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBubbling: 0
+  animator: {fileID: 0}
   Row: 0
   scoring: {fileID: 0}

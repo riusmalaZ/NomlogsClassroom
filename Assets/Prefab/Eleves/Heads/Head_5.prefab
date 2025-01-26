@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7192270319273126733}
   - component: {fileID: 4517157187055189753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -603874823
   m_SortingLayer: 5
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f1ce1493f53446d49b3d9838f96ed1f3, type: 3}
   m_Color: {r: 1, g: 0.8784314, b: 0.6784314, a: 1}
   m_FlipX: 0
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8759962156694822542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HairPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2364500454778320759}
   - component: {fileID: 3928160359843992383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeadShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3564892463352828406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GlassesPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5653297057187837218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MouthAndNosePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8175342206097442114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EyesPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

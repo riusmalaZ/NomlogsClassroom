@@ -9,11 +9,12 @@ public class RandomizeStudent : MonoBehaviour
     [Header("Prefabs")]
     public GameObject GumPrefab;
     public List<GameObject> BodyPrefab = new List<GameObject>();
-    public List<GameObject> headColorPrefab = new List<GameObject>();
+    public List<GameObject> HeadColorPrefab = new List<GameObject>();
     public List<GameObject> HairPrefab = new List<GameObject>();
     public List<GameObject> MouthAndNosePrefab = new List<GameObject>();
     public List<GameObject> EyesPrefab = new List<GameObject>();
     public List<GameObject> GlassesPrefab = new List<GameObject>();
+    public List<GameObject> LogosPrefab = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,9 +41,18 @@ public class RandomizeStudent : MonoBehaviour
         GameObject body = Instantiate(BodyPrefab[Random.Range(0, BodyPrefab.Count)],transform);
         body.GetComponent<SpriteRenderer>().color = OutfitColors[Random.Range(0,OutfitColors.Count)];
         body.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
-        GameObject headColor = Instantiate(headColorPrefab[Random.Range(0, headColorPrefab.Count)],body.transform.GetChild(0));
+        GameObject hood = body.transform.GetChild(2).gameObject;
+        hood.GetComponent<SpriteRenderer>().color = body.GetComponent<SpriteRenderer>().color;
+        hood.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        GameObject headColor = Instantiate(HeadColorPrefab[Random.Range(0, HeadColorPrefab.Count)],body.transform.GetChild(0));
         headColor.GetComponent<SpriteRenderer>().color = SkinColors[Random.Range(0,SkinColors.Count)];
         headColor.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        GameObject logo = Instantiate(LogosPrefab[Random.Range(0,LogosPrefab.Count)],body.transform.GetChild(1));
+        logo.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        for(int i = 0; i < body.transform.GetChild(3).childCount; i++){
+            body.transform.GetChild(3).GetChild(i).GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+            body.transform.GetChild(3).GetChild(i).GetComponentInChildren<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        }
         int indexHairPos = 0, indexMouthPos = 0, indexGlassesPos = 0, indexEyesPos = 0, indexHeadShape = 0;
         for(int i = 0; i < headColor.transform.childCount; i++){
             switch(headColor.transform.GetChild(i).name){
