@@ -75,6 +75,7 @@ public class RandomizeStudent : MonoBehaviour
         mouthAndNose.GetComponent<SpriteRenderer>().color = headShape.GetComponent<SpriteRenderer>().color;
         mouthAndNose.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
         GameObject gum = Instantiate(GumPrefab,headShape.transform.GetChild(indexMouthPos));
+        GetComponent<Student>().animator = gum.GetComponent<Animator>();
         gum.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
     }
 }

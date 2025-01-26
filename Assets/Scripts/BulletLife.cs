@@ -9,6 +9,7 @@ public class BulletLife : MonoBehaviour
     private bool _hasHit;
     private bool _waitToFreeze;
     private bool _isFrozen;
+    public float DistanceForLethal;
 
     void Update()
     {
@@ -41,6 +42,13 @@ public class BulletLife : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<Student>().Pop(IsLethal);
             Destroy(gameObject);
+        }
+        else if (IsLethal)
+        {
+            foreach (Student student in GameEvents.Students)
+            {
+                student.CheckIfInArea(transform.position, DistanceForLethal);
+            }
         }
     }
 }

@@ -5347,13 +5347,14 @@ MonoBehaviour:
   NumberSudentsFirstManche: 3
   fade: {fileID: 7562767538018263197}
   timerManche: {fileID: 1214339136}
-  durationInMinutes: 0.25
+  durationInMinutes: 2
   EcranVictoire: {fileID: 5088353316188427884}
   EcranDefaite: {fileID: 261294685}
   scoring: {fileID: 1214339137}
   isReloading: 0
   MancheNumberTextWin: {fileID: 2367223739919737087}
   MancheNumberTextLose: {fileID: 637736640}
+  aimAndLaunch: {fileID: 8750269849732883621}
 --- !u!114 &1214339136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5381,7 +5382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 3903449505197994569}
-  score: 20
+  score: 1
   victoirePanel: {fileID: 0}
   defaitePanel: {fileID: 0}
   victoireScoreText: {fileID: 3179370593512209643}

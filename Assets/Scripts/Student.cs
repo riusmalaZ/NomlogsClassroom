@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Student : MonoBehaviour
 {
     public bool isBubbling = false ;
-    Animator animator;
+    public Animator animator;
     public int Row ;
     float chrono;
     public Scoring scoring;
@@ -13,7 +13,6 @@ public class Student : MonoBehaviour
     void Start()
     {
         chrono = 0;
-        animator = GetComponentInChildren<Animator>();
         isBubbling = false;
     }
 
@@ -52,6 +51,12 @@ public class Student : MonoBehaviour
             else scoring.ChangeScore(1);
         }
 
+    }
+
+    public void CheckIfInArea(Vector3 projPos, float distance)
+    {
+        if (Vector3.Distance(projPos, transform.position) < distance && isBubbling) Pop(false);
+        
     }
 
 

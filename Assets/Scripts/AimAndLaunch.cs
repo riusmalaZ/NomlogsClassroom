@@ -23,6 +23,7 @@ public class AimAndLaunch : MonoBehaviour
     public Image JaugeVariablePower;
     public float SpeedIncrease;
     public Vector2 LaunchPowerLimits;
+    public float DistanceForLethal;
 
 
     private IPlayerState _currentState;
@@ -64,6 +65,7 @@ public class AimAndLaunch : MonoBehaviour
 
     public void Launch(){
         GameObject projectile = Instantiate(ProjectileSelected, transform.position, Quaternion.identity);
+        projectile.GetComponent<BulletLife>().DistanceForLethal = DistanceForLethal;
         float launchPower = LaunchPowerLimits.x+((LaunchPowerLimits.y-LaunchPowerLimits.x)*CoefPower);
         projectile.GetComponent<Rigidbody>().AddForce(Direction.normalized*launchPower, ForceMode.Impulse);
         ChangeState(PlayerState.Idle);

@@ -41,6 +41,7 @@ public class MancheManager : MonoBehaviour
     public TextMeshProUGUI MancheNumberTextWin; // Texte pour afficher
 
     public TextMeshProUGUI MancheNumberTextLose; // Texte pour afficher
+    public AimAndLaunch aimAndLaunch;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -74,6 +75,7 @@ public class MancheManager : MonoBehaviour
             mancheFinish = true;
             ResetMancheObjet();
             EcranDefaite.SetActive(true);
+            DestroyEndScreen();
             scoring.UpdateRecapPanels();
         }
 
@@ -86,14 +88,16 @@ public class MancheManager : MonoBehaviour
             // Si le score est au-dessus de 10  
             if (scoring.score >= 10)
             {
-                NextManche();
+                NextManche(); 
                 EcranVictoire.SetActive(true);
+                DestroyEndScreen();
                 scoring.UpdateRecapPanels();
             }
             else
             {
                 ResetMancheObjet();
                 EcranDefaite.SetActive(true);
+                DestroyEndScreen();
                 scoring.UpdateRecapPanels();
             }
         }
@@ -138,7 +142,7 @@ public class MancheManager : MonoBehaviour
     public void NextManche()
     {
         mancheObject.MancheNumber++;
-        mancheObject.NumberSudents += 1;
+        if (mancheObject.NumberSudents < 16) mancheObject.NumberSudents += 1;
 
         if(mancheObject.MancheNumber == MancheWindow)
         {
@@ -209,5 +213,16 @@ public class MancheManager : MonoBehaviour
         SceneManager.LoadScene(currentSceneName);
 
         
+    }
+
+    void DestroyEndScreen()
+    {
+        foreach (Student student in GameEvents.Students)
+        {
+            Destroy(student.gameObject);
+            GetComponent<GameEvents>().enabled = false;
+            GetComponent<TimerManche>().enabled = false;
+            aimAndLaunch.enabled = false;
+        }
     }
 }

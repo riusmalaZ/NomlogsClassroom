@@ -150,6 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1670c51c6a4ff40832c3dc09716514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeAfterFirstHitBeforeFreeze: 0
+  IsLethal: 1
+  DistanceForLethal: 0
 --- !u!1 &8394664743100880338
 GameObject:
   m_ObjectHideFlags: 0
