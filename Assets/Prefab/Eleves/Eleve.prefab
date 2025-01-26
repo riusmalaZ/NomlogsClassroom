@@ -55,7 +55,7 @@ MonoBehaviour:
   GumPrefab: {fileID: 8856195931819485379, guid: 1340ed196edb0ce4f8035c6dbb5a62cb, type: 3}
   BodyPrefab:
   - {fileID: 7525415862351565955, guid: ba1c312dc128f844cb87aa039e1163fd, type: 3}
-  HeadShapePrefab:
+  headColorPrefab:
   - {fileID: 6322063124416619039, guid: 4b47cdc828f058049a7897ca991e34d3, type: 3}
   - {fileID: 7920756576955564658, guid: 36685e75d14654b438dcd3a36e547a40, type: 3}
   - {fileID: 789147008153108057, guid: 718eb1a78e85e704d9cb8c06b633721d, type: 3}
@@ -104,3 +104,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBubbling: 0
   Row: 0
+  scoring: {fileID: 0}
