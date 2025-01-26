@@ -7638,8 +7638,8 @@ MonoBehaviour:
   aimAndLaunch: {fileID: 77820501}
   studentGenerator: {fileID: 1214339132}
   WindowOpen: 0
-  WindowLeft: {fileID: 0}
-  WindowRight: {fileID: 0}
+  WindowLeft: {fileID: 1346092471}
+  WindowRight: {fileID: 1951375064}
 --- !u!114 &1214339136
 MonoBehaviour:
   m_ObjectHideFlags: 0
