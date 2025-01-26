@@ -49,6 +49,13 @@ public class MancheManager : MonoBehaviour
     public TextMeshProUGUI MancheNumberTextLose; // Texte pour afficher
     public AimAndLaunch aimAndLaunch;
 
+    public StudentGenerator studentGenerator;
+
+    public bool WindowOpen = false;
+
+    public Animator WindowLeft;
+
+    public Animator WindowRight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -117,9 +124,20 @@ public class MancheManager : MonoBehaviour
             if(timerManche.timeRemaining <= TimingActivationWindow && timerManche.timeRemaining >= TimingDesactivationWindow)
             {
                 Window.SetActive(true);
-            }
+                if(WindowOpen == false)
+                {
+                    studentGenerator.studentWindow.AnimationOpenWindow();
+
+                    WindowLeft.SetBool("Open", true);
+                    WindowRight.SetBool("Open", true);
+
+                }
+                    WindowOpen = true;
+                }
             if(timerManche.timeRemaining <= TimingDesactivationWindow)
             {
+                WindowLeft.SetBool("Open", false);
+                WindowRight.SetBool("Open", false);
                 Window.SetActive(false);
             }
         }
