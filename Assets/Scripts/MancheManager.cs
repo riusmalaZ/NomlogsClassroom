@@ -15,6 +15,12 @@ public class MancheManager : MonoBehaviour
 
     public int MancheWindow = 5; // Numéro de la manche où la fenêtre s'ouvre
 
+    public float TimingActivationWindow = 90f; // Temps avant l'activation de la fenêtre
+
+    public float TimingDesactivationWindow = 30f; // Temps avant l'activation de la fenêtre
+
+    public GameObject Window; // Fenêtre à ouvrir
+
     public bool mancheWin = true; // Définit si la manche est gagnée ou perdue (à modifier dans le script qui gère la défaite et victoire)
 
     public bool mancheFinish = false; // Définit si la manche est terminée
@@ -64,6 +70,10 @@ public class MancheManager : MonoBehaviour
     void Start()
     {
         timerManche.StartTimer(durationInMinutes); // Démarre le minuteur
+
+        TimingActivationWindow = durationInMinutes * 60f - TimingActivationWindow;
+
+        TimingDesactivationWindow = durationInMinutes * 60f - TimingDesactivationWindow;
     }
 
     void Update()
@@ -102,6 +112,18 @@ public class MancheManager : MonoBehaviour
             }
         }
 
+        if(mancheObject.CanWindowOpen)
+        {
+            if(timerManche.timeRemaining <= TimingActivationWindow && timerManche.timeRemaining >= TimingDesactivationWindow)
+            {
+                Window.SetActive(true);
+            }
+            if(timerManche.timeRemaining <= TimingDesactivationWindow)
+            {
+                Window.SetActive(false);
+            }
+        }
+
         //Si élèves tué 
             // ResetManche
             // Ecran de défaite
@@ -130,6 +152,15 @@ public class MancheManager : MonoBehaviour
         mancheObject.MancheNumber = 1;
         mancheObject.NumberSudents = NumberSudentsFirstManche;
         mancheObject.CanWindowOpen = false;
+
+        if(mancheObject.MancheNumber == MancheWindow)
+        {
+            mancheObject.CanWindowOpen = true;
+        }
+        else
+        {
+            mancheObject.CanWindowOpen = false;
+        }
 
         MancheNumberTextLose.text = "Manche " + mancheObject.MancheNumber.ToString() + " perdue";
 

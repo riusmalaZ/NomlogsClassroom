@@ -5,7 +5,7 @@ using TMPro;
 public class TimerManche : MonoBehaviour
 {
     
-    private float timeRemaining; // Temps restant
+    public float timeRemaining; // Temps restant
     private bool isRunning = false; // Indique si le minuteur est en cours
     public bool isCompleted = false; // Indique si le minuteur est terminé
 

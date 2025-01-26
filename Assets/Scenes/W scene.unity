@@ -1241,7 +1241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &147516612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6252,20 +6252,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mancheObject: {fileID: 11400000, guid: a024c81734a4fc749bd6bd3d00828171, type: 2}
-  MancheWindow: 3
+  MancheWindow: 1
+  TimingActivationWindow: 30
+  TimingDesactivationWindow: 90
+  Window: {fileID: 147516611}
   mancheWin: 0
   mancheFinish: 1
   NumberSudentsFirstManche: 3
   fade: {fileID: 7562767538018263197}
   timerManche: {fileID: 1214339136}
   durationInMinutes: 2
-  EcranVictoire: {fileID: 0}
-  EcranDefaite: {fileID: 0}
+  EcranVictoire: {fileID: 616536673}
+  EcranDefaite: {fileID: 798839280}
   scoring: {fileID: 1214339137}
   isReloading: 0
-  MancheNumberTextWin: {fileID: 1532588222}
-  MancheNumberTextLose: {fileID: 1771534863}
-  aimAndLaunch: {fileID: 0}
+  MancheNumberTextWin: {fileID: 1771534863}
+  MancheNumberTextLose: {fileID: 1532588222}
+  aimAndLaunch: {fileID: 77820501}
 --- !u!114 &1214339136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6278,6 +6281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2c47265b1aec643a061b0e92982b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeRemaining: 0
   isCompleted: 0
   timerText: {fileID: 1584742036}
 --- !u!114 &1214339137
@@ -6293,11 +6297,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 3903449505197994569}
-  score: 1
+  score: 20
   victoirePanel: {fileID: 0}
   defaitePanel: {fileID: 0}
-  victoireScoreText: {fileID: 0}
-  defaiteScoreText: {fileID: 0}
+  victoireScoreText: {fileID: 782631457}
+  defaiteScoreText: {fileID: 1952953290}
 --- !u!1001 &1244248683
 PrefabInstance:
   m_ObjectHideFlags: 0
