@@ -38,7 +38,7 @@ public class BulletLife : MonoBehaviour
             _freeze();
 
 
-        if (collision.gameObject.tag == "Gum")
+        if (collision.gameObject.tag == "Gum" && collision.gameObject.GetComponentInParent<Student>().isBubbling)
         {
             collision.gameObject.GetComponentInParent<Student>().Pop(IsLethal);
             Destroy(gameObject);

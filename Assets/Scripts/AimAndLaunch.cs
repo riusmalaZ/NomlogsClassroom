@@ -17,7 +17,7 @@ public class AimAndLaunch : MonoBehaviour
     [HideInInspector] public GameObject ProjectileSelected;
     [HideInInspector] public Dictionary<PlayerState,IPlayerState> PlayerStateDic = new();
 
-
+    public WeaponManager weaponManager;
     public List<GameObject> ProjectilesPrefab = new List<GameObject>();
     public GameObject JaugePower;
     public Image JaugeVariablePower;
@@ -48,7 +48,7 @@ public class AimAndLaunch : MonoBehaviour
     
 
     private void _init(){
-        ProjectileSelected = ProjectilesPrefab[0];
+        ProjectileSelected = weaponManager.RandomizeWeapon();
     }
 
     private void _initStates(){
@@ -69,6 +69,7 @@ public class AimAndLaunch : MonoBehaviour
         projectile.GetComponent<BulletLife>().DistanceForLethal = DistanceForLethal;
         float launchPower = LaunchPowerLimits.x+((LaunchPowerLimits.y-LaunchPowerLimits.x)*CoefPower);
         projectile.GetComponent<Rigidbody>().AddForce(Direction.normalized*launchPower, ForceMode.Impulse);
+        ProjectileSelected = weaponManager.RandomizeWeapon();
     }
 
     public void DoneLaunching(){

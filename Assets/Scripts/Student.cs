@@ -28,6 +28,8 @@ public class Student : MonoBehaviour
                 isBubbling = false;
             }
         }
+        GetComponentInChildren<CapsuleCollider>().enabled = isBubbling;
+        
     }
 
     public void Bubble()
@@ -39,6 +41,7 @@ public class Student : MonoBehaviour
 
     public void Pop(bool isLethal)
     {
+        GetComponent<AudioSource>().Play();
         animator.SetTrigger("PopBubble");
         isBubbling = false;
         if (isLethal)

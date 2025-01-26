@@ -34,6 +34,7 @@ public class TimerManche : MonoBehaviour
                 timeRemaining = 0f; // Assure qu'il ne descend pas en dessous de 0
                 isRunning = false; // Arrête le minuteur
                 isCompleted = true; // Le minuteur est terminé
+                GetComponent<AudioSource>().enabled = false;
 
                 Debug.Log("Le minuteur est terminé !");
             }
