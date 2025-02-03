@@ -20,6 +20,7 @@ public class WeaponManager : MonoBehaviour
             currentIndex = Random.Range(0, WeaponsPrefabs.Count);
             ArmeActuelle = WeaponsPrefabs[currentIndex];
             UIArmeActuelle.sprite = ArmeActuelle.GetComponentInChildren<SpriteRenderer>().sprite;
+            UIArmeActuelle.preserveAspect = true;
 
             int nextIndex;
             do
@@ -29,6 +30,7 @@ public class WeaponManager : MonoBehaviour
 
             ArmeSuivante = WeaponsPrefabs[nextIndex];
             UIArmeSuivante.sprite = ArmeSuivante.GetComponentInChildren<SpriteRenderer>().sprite;
+            UIArmeSuivante.preserveAspect = true;
         }
 
     }
@@ -48,6 +50,8 @@ public class WeaponManager : MonoBehaviour
 
         ArmeSuivante = WeaponsPrefabs[nextIndex];
         UIArmeSuivante.sprite = ArmeSuivante.GetComponentInChildren<SpriteRenderer>().sprite;
+        UIArmeActuelle.preserveAspect = true;
+        UIArmeSuivante.preserveAspect = true;
 
         return ArmeActuelle;
     }

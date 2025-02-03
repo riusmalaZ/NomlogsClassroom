@@ -44,6 +44,10 @@ public class RandomizeStudent : MonoBehaviour
         GameObject hood = body.transform.GetChild(2).gameObject;
         hood.GetComponent<SpriteRenderer>().color = body.GetComponent<SpriteRenderer>().color;
         hood.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;
+        GameObject rightArmNormal = body.transform.GetChild(3).GetChild(1).gameObject;
+        rightArmNormal.GetComponent<SpriteRenderer>().color = body.GetComponent<SpriteRenderer>().color;
+        GameObject rightArmRaised = body.transform.GetChild(3).GetChild(2).gameObject;
+        rightArmRaised.GetComponent<SpriteRenderer>().color = body.GetComponent<SpriteRenderer>().color;
         GameObject headColor = Instantiate(HeadColorPrefab[Random.Range(0, HeadColorPrefab.Count)],body.transform.GetChild(0));
         headColor.GetComponent<SpriteRenderer>().color = SkinColors[Random.Range(0,SkinColors.Count)];
         headColor.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayerNameRow;

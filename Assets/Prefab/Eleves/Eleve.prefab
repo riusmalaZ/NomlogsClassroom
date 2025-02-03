@@ -48,8 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkinColors:
   - {r: 1, g: 0.9091223, b: 0.6999999, a: 1}
+  - {r: 1, g: 0.79229224, b: 0.6245283, a: 1}
   OutfitColors:
   - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
   GumPrefab: {fileID: 8856195931819485379, guid: 1340ed196edb0ce4f8035c6dbb5a62cb, type: 3}
   BodyPrefab:
   - {fileID: 7525415862351565955, guid: ba1c312dc128f844cb87aa039e1163fd, type: 3}

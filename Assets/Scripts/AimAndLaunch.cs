@@ -25,6 +25,7 @@ public class AimAndLaunch : MonoBehaviour
     public Vector2 LaunchPowerLimits;
     public float DistanceForLethal;
     public Transform ObjectPosition;
+    public GameObject Main1, Main2;
 
 
     private IPlayerState _currentState;
@@ -49,6 +50,7 @@ public class AimAndLaunch : MonoBehaviour
 
     private void _init(){
         ProjectileSelected = weaponManager.RandomizeWeapon();
+        _displayWeaponInHand();
     }
 
     private void _initStates(){
@@ -71,6 +73,24 @@ public class AimAndLaunch : MonoBehaviour
         float launchPower = LaunchPowerLimits.x+((LaunchPowerLimits.y-LaunchPowerLimits.x)*CoefPower);
         projectile.GetComponent<Rigidbody>().AddForce(Direction.normalized*launchPower, ForceMode.Impulse);
         ProjectileSelected = weaponManager.RandomizeWeapon();
+        _displayWeaponInHand();
+    }
+
+    private void _displayWeaponInHand(){
+        for(int i = 0; i < Main1.transform.childCount; i++){
+            if(Main1.transform.GetChild(i).name == ProjectileSelected.name){
+                Main1.transform.GetChild(i).gameObject.SetActive(true);
+            } else if(Main1.transform.GetChild(i).name != "POUCE2"){
+                Main1.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+        for(int i = 0; i < Main2.transform.childCount; i++){
+            if(Main2.transform.GetChild(i).name == ProjectileSelected.name){
+                Main2.transform.GetChild(i).gameObject.SetActive(true);
+            } else if(Main2.transform.GetChild(i).name != "pouce1"){
+                Main2.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 
     public void DoneLaunching(){
